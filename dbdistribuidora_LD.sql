@@ -729,7 +729,7 @@ from tbCliente
 inner join tbClientePF
 on tbCliente.idCli = tbClientePF.idCli;
 
--- ========================== 35 ==========================
+-- ========================== 36 ==========================
 
 describe tbClientePJ;
 describe tbCliente;
@@ -742,4 +742,33 @@ from tbCliente
 inner join tbClientePJ
 on tbCliente.idCli = tbClientePJ.idCli
 inner join tbendereco 
+on tbCliente.CepCli = tbEndereco.CEP;
+
+
+-- ========================== 37 ==========================
+
+describe tbClientePJ;
+describe tbCliente;
+
+describe tbEndereco;
+
+describe tbCidade;
+
+describe tbEstado;
+
+describe tbBairro;
+
+
+select
+*
+from tbCliente
+inner join tbClientePJ
+on tbCliente.idCli = tbClientePJ.idCli
+inner join tbendereco 
+on tbCliente.CepCli = tbEndereco.CEP
+inner join tbCidade 
+on tbCliente.CepCli = tbEndereco.CEP
+inner join tbBairro 
+on tbCliente.CepCli = tbEndereco.CEP
+inner join tbEstado 
 on tbCliente.CepCli = tbEndereco.CEP
